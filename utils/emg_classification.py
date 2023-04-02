@@ -29,7 +29,6 @@ def get_score(x: np.ndarray, y: np.ndarray) -> float:
     model = linear_model.LinearRegression()
     model.fit(x, y)
     prediction = model.predict(x)
-    print(type(metrics.r2_score(y, prediction)))
     return metrics.r2_score(y, prediction)
 
 
@@ -47,7 +46,6 @@ def classify_signals(source_path: str) -> None:
     Loads and classifies signal chunks
     """
     signals = sorted(glob.glob(os.path.join(source_path, "*/")))
-    print(signals)
     for signal in signals:
         signal_chunks = sorted(
             glob.glob(os.path.join(signal, "*.txt")), key=numerical_sort
