@@ -8,7 +8,7 @@ from scipy import integrate
 from sklearn import linear_model, metrics
 
 
-def numerical_sort(value: str):
+def numerical_sort(value: str) -> list:
     """
     Sorts a given string containing numerical values in ascending order
     """
@@ -18,7 +18,7 @@ def numerical_sort(value: str):
     return parts
 
 
-def cumulative_iemg(data: np.ndarray):
+def cumulative_iemg(data: np.ndarray) -> np.ndarray:
     """
     Calculates cumulative values of iEMG
     """
